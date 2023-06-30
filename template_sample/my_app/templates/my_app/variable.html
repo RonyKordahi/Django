@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>varible.html file</h1>
+
+    {# {{ value | filter }} the bar sets the filter #}
+    {# filters can be chained {{value | filter | filter }} #}
+
+    <h2>Full name: {{first_name | upper}} {{last_name | length}}</h2>
+    
+    {% if logged_in %}
+        You are logged in!
+    {% endif %}
+    
+    <ul>
+        {% for item in some_list %}
+            <li>{{item}}</li>
+        {% endfor %}
+    </ul> 
+
+    <h2>{# this is a django comment! #}</h2>
+</body>
+</html>

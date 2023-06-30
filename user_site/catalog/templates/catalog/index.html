@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Catalog Homepage</h1>
+    <p>Total Books: {{num_books}}</p>
+    <p>Total Avail: {{num_avail}}</p>
+
+    {% if user.is_authenticated %}
+    
+        <p>You're logged in!</p>
+        <p>Welcome {{user.get_username}}!</p>
+
+        <!-- the next parameter redirects to the current path -->
+        <a href="{% url 'logout' %}?next={{request.path}}">Click here to logout</a>
+
+    {% else %}
+
+        <p>You're not logged in!</p>
+        <a href="{% url 'login' %}?next={{request.path}}">Click here to login</a>
+    
+    {% endif %}
+
+</body>
+</html>

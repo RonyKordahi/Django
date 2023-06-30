@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Checked out books list for {{user.get_username}}</h1>
+
+    <ul>
+
+        {% for instance in bookinstance_list %}
+        
+            <li>{{instance.book.title}}</li>
+
+        {% endfor %}
+
+    </ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Example template</h1>
+
+    <img src="{% static "my_app/broccoli.jpg" %}" alt="random image">
+
+    <br/>
+
+    <a href="{% url "my_app:variable" %}">Go to variable</a>
+{% endblock content %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+
+    <ul>
+        <li>
+            <a href="{% url 'classroom:thanks' %}">Thank you</a>
+        </li>
+        <li>
+            <a href="{% url 'classroom:contact' %}">Contact</a>
+        </li>
+        <li>
+            <a href="{% url 'classroom:create_teacher' %}">Create teacher</a>
+        </li>
+        <li>
+            <a href="{% url 'classroom:list_teacher' %}">List teachers</a>
+        </li>
+    </ul>
+</body>
+</html>
