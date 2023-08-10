@@ -43,7 +43,7 @@ def adminGetOrders(req):
 @permission_classes([IsAuthenticated])
 def getUserOrders(req):
 
-    user = req.user    
+    user = req.user
     orders = user.order_set.all()
 
     serializer = OrderSerializer(orders, many=True)

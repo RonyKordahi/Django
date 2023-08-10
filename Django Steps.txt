@@ -1,0 +1,147 @@
+==========================================================
+			Create Project
+==========================================================
+
+1. Create the project
+  a) django-admin startproject <project name>
+
+2. Go to the project
+  a) cd <project name>
+
+3. Open the project
+  a) code .
+
+4. Crate the app
+  a) python manage.py startapp <app name>
+
+5. Register the app
+  a) Navigate to "apps.py" in the app
+  b) Grab the class "<app name>Config"
+  c) Navigate to "settings.py"
+  d) Scroll do "INSTALLED_APPS"
+  e) Add "<app name>.apps.<class name>" to the list
+
+6. Assign project side templates
+  a) At the top of "settings.py" import os
+  b) Scroll down to "TEMPLATES"
+  c) In the "DIRS" key, add "os.path.join(BASE_DIR, "templates")" to the list
+
+7. Run the server
+  a) python manage.py runserver
+
+==========================================================
+			Create URLs
+==========================================================
+
+1. Create "urls.py" in the app
+
+2. Import necessary things
+  a) from django.urls import path
+  b) from . import views
+
+3. Create "app_name" (for django url tag)
+  a) app_name = <app name>
+
+4. Create "urlpatterns"
+
+5. Set up some paths
+  a) path("url/", views.<view>, name=<name>)
+
+6. Go to "urls.py" in the project
+
+7. Add "include" to the django.urls import
+
+8. Create a path for the app urls
+  a) path("url/", include("<app>.urls")
+
+==========================================================
+			Create Models
+==========================================================
+
+1. Create models
+  a) Go to "models.py" in the app
+  b) Create a class "<class>(models.Model)"
+  c) Define it's fields
+  d) Define a __str__ method
+
+2. Register the model
+  a) Go to "admin.py" in the app
+  b) Import the model with "from .models import <model>"
+  c) Register the model with "admin.site.register(<model>)"
+
+3. Create migrations
+  a) python manage.py makemigrations <app name>
+
+4. Run the migrations
+  a) python manage.py migrate
+
+5. Run the server
+  a) python manage.py runserver
+
+??
+Serialize the model
+  a) Create "serializers.py"
+  b) from rest_framework import serializers
+  c) from .models import *
+  d) class <Model>Serlializer(serializers.ModelSerializer)
+  e) Add "Meta" subclass
+  f) associate model variable to model name "model = <Model>"
+  g) specify fields with a list of strings
+??
+
+*********************
+** ON FIELD CHANGE **
+*********************
+
+6. Re-create the migrations
+
+7. Re-run the migrations
+
+==========================================================
+			Models Manipulation
+==========================================================
+
+Play with models in cmd:
+
+1. Go to shell
+  a) python manage.py shell
+
+2. Import model
+  b) from <app>.models import <class>
+
+3. Use cmd commands to manipulate model
+
+==========================================================
+			Super User
+==========================================================
+
+1. Create super user
+  a) python manage.py createsuperuser
+
+2. Fill inputs
+
+3. Go to "doman.com/admin"
+
+4. Login
+
+
+==========================================================
+			Static Files
+==========================================================
+
+1. Create a static folder in the app
+
+2. Create / insert files in the statif folder
+
+3. In the template, add "{% load static %}" at the top of the file
+
+4. Run migrations again
+  a) python manage.py migrate
+
+5. Run server again
+  a) python manage.py runserver
+
+
+
+
+
